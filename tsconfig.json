@@ -1,0 +1,37 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "es2020",
+    "types": [
+      "node"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "type-orm": [
+        "dist/type-orm/type-orm",
+        "dist/type-orm"
+      ],
+      "typeorm": [
+        "dist/typeorm/typeorm",
+        "dist/typeorm"
+      ],
+      "angular-typeorm": [
+        "dist/angular-typeorm/angular-typeorm",
+        "dist/angular-typeorm"
+      ]
+    }
+  }
+}

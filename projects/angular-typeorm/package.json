@@ -1,0 +1,30 @@
+{
+  "name": "angular-typeorm",
+  "version": "0.0.1",
+  "author": {
+    "name": "Arslan Mughal",
+    "url": "https://gravitonapps.com",
+    "email": "arslanmughal5566@gmail.com"
+  },
+  "keywords": [
+    "Nwjs",
+    "TypeOrm",
+    "Angular",
+    "Electron",
+    "Database"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/arslanmughal99/angular-typeorm",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arslanmughal99/angular-typeorm.git"
+  },
+  "peerDependencies": {
+    "@angular/common": "^10.1.5",
+    "@angular/core": "^10.1.5",
+    "typeorm": "^0.2.26"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}
