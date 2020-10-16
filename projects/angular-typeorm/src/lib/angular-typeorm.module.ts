@@ -1,7 +1,11 @@
 /* eslint-disable no-constant-condition */
 import { CommonModule } from '@angular/common';
 import { ConnectionOptions, createConnection } from 'typeorm';
-import { APP_INITIALIZER, ModuleWithProviders, NgModule } from '@angular/core';
+import {
+  NgModule,
+  ModuleWithProviders,
+  APP_BOOTSTRAP_LISTENER,
+} from '@angular/core';
 
 // @dynamic
 @NgModule({
@@ -25,7 +29,7 @@ export class AngularTypeormModule {
 
   /**
    * @param configs  connection options
-   * @description Initialize  connection for root
+   * @description Initialize TypeOrm connection for root
    */
   static forRoot(
     configs: ConnectionOptions
@@ -34,7 +38,7 @@ export class AngularTypeormModule {
       ngModule: AngularTypeormModule,
       providers: [
         {
-          provide: APP_INITIALIZER,
+          provide: APP_BOOTSTRAP_LISTENER,
           useFactory: () => async () => {
             let retryCount = 0;
             while (true) {
@@ -43,10 +47,10 @@ export class AngularTypeormModule {
               } catch (err) {
                 retryCount += 1;
                 console.error(
-                  `TypeOrm Connection Attempt ${retryCount} Failed: `,
+                  `TYPEORM CONNECTION ATTEMPT ${retryCount} FAILED: `,
                   err
                 );
-                this.wait(5);
+                await this.wait(5);
                 continue;
               }
             }
